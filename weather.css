@@ -1,0 +1,141 @@
+#search-button, #use-current-location {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+#search-button:before, #use-current-location::before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+#search-button:active, #use-current-location:active {
+  color: #000
+}
+
+#search-button:active:after, #use-current-location:active::after {
+  background: transparent;
+}
+
+#search-button:hover:before, #use-current-location:hover::before {
+  opacity: 1;
+}
+
+#search-button:after, #use-current-location::after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #145bb7;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+footer {
+  background-color: #384fe4;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+            text-decoration: none;
+            font-weight: bold; /* Add bold font weight */
+            padding: 5px 10px; /* Add padding to make the link clickable */
+            border-radius: 5px; /* Add rounded corners */
+            background-color: #10122e; /* Add background color */
+            transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+}
+
+footer a:hover {
+  background-color: #0056b3; /* Change background color on hover */
+            color: #fff; /* Change text color on hover */
+
+}
+
+
+
+
+
+
+
+
+/* Styles for iPad Mini */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Adjust layout and styling for iPad Mini */
+  .weather-app {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .city-date-section, .temperature-info, .additional-info {
+    flex-direction: column; 
+  }
+
+  .city-date-section h2, .temp {
+    margin-bottom: 10px; 
+  }
+}
+
+/* Styles for iPhone SE and similar small screens */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  
+  .weather-app {
+    padding: 5px;
+    font-size: 2px;
+  }
+
+  .city-date-section, .temperature-info, .additional-info {
+    flex-direction: column; 
+  }
+
+  .city-date-section h2, .temp {
+    margin-bottom: 5px; 
+  }
+
+footer {
+   padding: 5px;
+   font-size: small;
+   
+}
+
+header {
+  font-size: 10px;
+  
+}
+  
+
+}
+
